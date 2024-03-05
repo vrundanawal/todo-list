@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import Button from "./Button";
+import { TodoContext } from "./context/TaskContextProvider";
 
-const Input = ({addTodo,inputValue,setInputValue}) => {
-;
+const Input = () => {
+
+  const [ todos,setTodos,inputValue, setInputValue ] = useContext( TodoContext );
+
+  const addTodo = () => {
+    if (inputValue !== "") {
+      setTodos([...todos, inputValue]);
+      setInputValue("");
+    }
+  };
 
   return (
     <div>
