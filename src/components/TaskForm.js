@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./TaskForm.css";
 import Input from "./Input";
-
+import TodoList from "./TodoList";
 
 export default function TaskForm() {
   // Define state for the todo list items and input field
@@ -18,8 +18,9 @@ export default function TaskForm() {
 
   // Define function to remove a todo item from the list
   const removeTodo = (index) => {
+    //console.log(index);
     const newTodos = [...todos];
-    newTodos.splice(index, 1);
+    newTodos.splice(index,1);
     setTodos(newTodos);
   };
   return (
@@ -31,16 +32,8 @@ export default function TaskForm() {
         setInputValue={setInputValue}
         todos={todos}
       />
-     
-      <ul>
-        {todos.map((todo, index) => (
-          <li key={index}>
-            {todo}
-            <button onClick={() => removeTodo(index)}>X</button>
-         
-          </li>
-        ))}
-      </ul>
+      <TodoList todos={todos}  removeTodo={removeTodo}/>
+    
     </div>
   );
 }

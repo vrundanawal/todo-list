@@ -1,5 +1,5 @@
 import React from "react";
-import TaskForm from "./component/TaskForm";
+import TaskForm from "./components/TaskForm";
 import "./App.css"
 
 function App() {
