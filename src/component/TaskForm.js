@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./TaskForm.css";
 import Input from "./Input";
-import TodoList from "./TodoList";
+
 
 export default function TaskForm() {
   // Define state for the todo list items and input field
@@ -31,7 +31,16 @@ export default function TaskForm() {
         setInputValue={setInputValue}
         todos={todos}
       />
-      <TodoList todos={todos} removeTodo={removeTodo}  />
+     
+      <ul>
+        {todos.map((todo, index) => (
+          <li key={index}>
+            {todo}
+            <button onClick={() => removeTodo(index)}>X</button>
+         
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
