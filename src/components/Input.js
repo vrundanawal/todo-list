@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import TodoList from "./TodoList";
+import React from "react";
 import Button from "./Button";
 
 const Input = ({addTodo,inputValue,setInputValue}) => {
@@ -10,6 +9,7 @@ const Input = ({addTodo,inputValue,setInputValue}) => {
       <input
         type="text"
         value={inputValue}
+        placeholder="Enter Todos"
         onChange={(e) => setInputValue(e.target.value)}
       />
       <Button title='Add' onClick={addTodo}/>

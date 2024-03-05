@@ -24,7 +24,7 @@ export default function TaskForm() {
     setTodos(newTodos);
   };
   return (
-    <div className="TaskForm">
+    <div className="taskForm">
       <h1>Todo List</h1>
       <Input
         addTodo={addTodo}
