@@ -1,0 +1,71 @@
+.TaskForm {
+    font-family: 'Arial', sans-serif;
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #000048;
+}
+
+h1 {
+    text-align: center;
+    padding: 0em 2em 0em 2em;
+    font-size: 18px;
+    margin-top: -16px;
+    line-height: 22px !important;
+    color: white;
+    padding-top: 5px;
+
+    /* color: #92BBE6; */
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+button {
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+/* button:hover {
+    background-color: #ff3333;
+} */
+
+div>input {
+    padding: 8px;
+    margin-right: 5px;
+}
+
+div>button {
+    background-color: #2F78C4;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+/* div>button:hover {
+    background-color: #2F78C4;
+    ;
+} */
