@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import Button from "./Button";
+
 import {TodoContext} from '../context/TodoProvider'
 
 const AddTodo = () => {
@@ -25,8 +25,8 @@ const AddTodo = () => {
         placeholder="Enter Todos"
         onChange={(e) => setInputText(e.target.value)}
       />
-      <Button title='Add' onClick={handleAddTodo}/>
-      {/* <button onClick={handleAddTodo}>Add</button> */}
+     
+      <button onClick={handleAddTodo}>Add</button>
     </div>
   );
 };

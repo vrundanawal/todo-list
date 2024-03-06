@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import Button from "./Button";
+
 import {TodoContext} from '../context/TodoProvider'
 
 const TodoList = () => {
@@ -20,8 +20,8 @@ console.log(todos);
       {todos.map((todo) => (
         <li key={todo.id}>
           <span>{todo.inputText}</span>
-          <Button onClick={() => deleteTodo(todo.id)} title="Delete" />
-          <Button   title="Update" className='edit-button' onClick={() =>handleEdit(todo.id)} />
+          <button  onClick={() => deleteTodo(todo.id)}>Delete</button>
+          <button className='edit-button'  onClick={() =>handleEdit(todo.id)}>Update</button>
         </li>
       ))}
     </ul>
