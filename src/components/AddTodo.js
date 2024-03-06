@@ -1,10 +1,7 @@
 import React, { useState } from "react";
-import TodoList from "./TodoList";
 import Button from "./Button";
 
-const Input = ({addTodo,inputValue,setInputValue}) => {
-;
-
+const AddTodo = ({addTodo,inputValue,setInputValue}) => {
   return (
     <div>
       <input
@@ -17,4 +14,4 @@ const Input = ({addTodo,inputValue,setInputValue}) => {
   );
 };
 
-export default Input;
+export default AddTodo;
