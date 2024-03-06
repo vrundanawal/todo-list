@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import Button from "./Button";
-import { TodoContext } from "./context/TaskContextProvider";
+import {TodoContext} from '../context/TaskContextProvider'
 
 const TodoList = () => {
   const [ todos,setTodos ] = useContext( TodoContext );
 
   //Define function to remove a todo item from the list
-  const removeTodo = (index) => {
+  const handleRemoveTodo = (index) => {
     //console.log(index);
     const newTodos = [...todos];
     newTodos.splice(index,1);
@@ -17,7 +17,7 @@ const TodoList = () => {
       {todos && todos.map((todo, index) => (
         <li key={index}>
           {todo}
-          <Button onClick={() => removeTodo(index)} title="Delete" />
+          <Button onClick={() => handleRemoveTodo(index)} title="Delete" />
         </li>
       ))}
     </ul>

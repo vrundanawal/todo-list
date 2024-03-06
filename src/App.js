@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
-import TaskContextProvider from "./components/context/TaskContextProvider";
-import Input from "./components/Input";
+import TaskContextProvider from "./context/TaskContextProvider";
+import AddTodo from "./components/AddTodo";
 import TodoList from "./components/TodoList";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
       <TaskContextProvider>
         <div className="task">
           <h1>Todo List</h1>
-          <Input />
+          <AddTodo />
           <TodoList />
         </div>
       </TaskContextProvider>

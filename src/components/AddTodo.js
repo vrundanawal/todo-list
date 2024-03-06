@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import Button from "./Button";
-import { TodoContext } from "./context/TaskContextProvider";
+import {TodoContext} from '../context/TaskContextProvider'
 
-const Input = () => {
+const AddTodo = () => {
 
   const [ todos,setTodos,inputValue, setInputValue ] = useContext( TodoContext );
 
-  const addTodo = () => {
+  const handleAddTodo = () => {
     if (inputValue !== "") {
       setTodos([...todos, inputValue]);
       setInputValue("");
@@ -21,9 +21,9 @@ const Input = () => {
         placeholder="Enter Todos"
         onChange={(e) => setInputValue(e.target.value)}
       />
-      <Button title='Add' onClick={addTodo}/>
+      <Button title='Add' onClick={handleAddTodo}/>
     </div>
   );
 };
 
-export default Input;
+export default AddTodo;
