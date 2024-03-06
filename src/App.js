@@ -1,11 +1,11 @@
 import React from "react";
-import TodoTask from "./components/TodoTask";
-import "./App.css"
+import "./App.css";
+import TaskForm from "./components/TaskForm";
 
 function App() {
   return (
     <div className="App">
-      <TodoTask />
+      <TaskForm />
     </div>
   );
 }

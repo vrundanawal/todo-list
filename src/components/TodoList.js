@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "./Button";
+
 
 const TodoList = ({ todos, removeTodo }) => {
   return (
@@ -7,7 +7,7 @@ const TodoList = ({ todos, removeTodo }) => {
       {todos.map((todo) => (
         <li key={todo.id}>
           {todo.inputValue}
-          <Button onClick={() => removeTodo(todo.id)} title="Delete" />
+          <button onClick={() => removeTodo(todo.id)}>Delete</button>
         </li>
       ))}
     </ul>

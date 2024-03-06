@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./TaskForm.css";
 import TodoList from "./TodoList";
-import AddTodo from "./AddTodo";
 
-export default function TodoTask() {
+
+export default function TaskForm() {
   // Define state for the todo list items and input field
   const [todos, setTodos] = useState([]);
   const [inputValue, setInputValue] = useState("");
@@ -29,13 +29,17 @@ export default function TodoTask() {
   return (
     <div className="TaskForm">
       <h1>Todo List</h1>
-      <AddTodo
-        addTodo={handleAddTodo}
-        inputValue={inputValue}
-        setInputValue={setInputValue}
-        todos={todos}
+      <input
+        type="text"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
       />
+
+      <button onClick={handleAddTodo}>Add</button>
       <TodoList todos={todos} removeTodo={handleRemoveTodo} />
     </div>
   );
 }
+
+
+
