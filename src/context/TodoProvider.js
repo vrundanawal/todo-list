@@ -2,7 +2,7 @@ import React, { createContext, useState } from "react";
 
 export const TodoContext = createContext();
 
-const TaskContextProvider = ({ children }) => {
+const TodoProvider = ({ children }) => {
   const [todos, setTodos] = useState([]);
   const [inputValue, setInputValue] = useState("");
 
@@ -13,4 +13,4 @@ const TaskContextProvider = ({ children }) => {
   );
 };
 
-export default TaskContextProvider;
+export default TodoProvider;
