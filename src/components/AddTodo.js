@@ -1,18 +1,17 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Button from "./Button";
 import {TodoContext} from '../context/TodoProvider'
 
 const AddTodo = () => {
 
-  const [ todos,setTodos,inputValue, setInputValue ] = useContext( TodoContext );
-  console.log(todos);
+  const {createTodo} = useContext( TodoContext );
+  const [inputText, setInputText] = useState('');
 
   const handleAddTodo = () => {
     //validation for input field
-    if (inputValue.trim() !== "") {
-      const newTodos = [...todos, { id: new Date().getTime(), inputValue }];
-      setTodos(newTodos);
-      setInputValue("");
+    if (inputText.trim() !== "") {
+      createTodo(inputText);
+      setInputText("");
     }else{
       alert("Please enter the task");
     }
@@ -22,11 +21,12 @@ const AddTodo = () => {
     <div>
       <input
         type="text"
-        value={inputValue}
+        value={inputText}
         placeholder="Enter Todos"
-        onChange={(e) => setInputValue(e.target.value)}
+        onChange={(e) => setInputText(e.target.value)}
       />
       <Button title='Add' onClick={handleAddTodo}/>
+      {/* <button onClick={handleAddTodo}>Add</button> */}
     </div>
   );
 };

@@ -54,6 +54,16 @@ button {
   border-radius: 3px;
 }
 
+.edit-button{
+  background-color: #128905a6;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  margin-left: 10px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
 /* button:hover {
   background-color: #ff3333;
 } */

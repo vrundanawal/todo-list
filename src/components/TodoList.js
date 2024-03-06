@@ -3,21 +3,25 @@ import Button from "./Button";
 import {TodoContext} from '../context/TodoProvider'
 
 const TodoList = () => {
-  const [ todos,setTodos ] = useContext( TodoContext );
+ 
 
-  //Define function to remove a todo item from the list
-  const handleRemoveTodo = (id) => {
-    const filteredTodo = todos.filter((item) => {
-      return item.id !== id;
-    });
-    setTodos(filteredTodo);
-  };
+  const {todos,deleteTodo,updateTodo} =useContext( TodoContext );
+
+const handleEdit = (id) => {
+  
+  const newText = prompt('Enter new Task: ');
+  if(newText){
+    updateTodo(id,newText)
+  }
+}
+console.log(todos);
   return (
     <ul>
-      {todos && todos.map((todo) => (
+      {todos.map((todo) => (
         <li key={todo.id}>
-          {todo.inputValue}
-          <Button onClick={() => handleRemoveTodo(todo.id)} title="Delete" />
+          <span>{todo.inputText}</span>
+          <Button onClick={() => deleteTodo(todo.id)} title="Delete" />
+          <Button   title="Update" className='edit-button' onClick={() =>handleEdit(todo.id)} />
         </li>
       ))}
     </ul>
