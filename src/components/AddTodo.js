@@ -5,11 +5,16 @@ import {TodoContext} from '../context/TaskContextProvider'
 const AddTodo = () => {
 
   const [ todos,setTodos,inputValue, setInputValue ] = useContext( TodoContext );
+  console.log(todos);
 
   const handleAddTodo = () => {
-    if (inputValue !== "") {
-      setTodos([...todos, inputValue]);
+    //validation for input field
+    if (inputValue.trim() !== "") {
+      const newTodos = [...todos, { id: new Date().getTime(), inputValue }];
+      setTodos(newTodos);
       setInputValue("");
+    }else{
+      alert("Please enter the task");
     }
   };
 
