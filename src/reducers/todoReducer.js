@@ -1,6 +1,6 @@
 const initialState = {
     tasks: [],
-
+    userInput: ""
 }
 
 const todoReducer = (state = initialState, action) => {
@@ -15,6 +15,12 @@ const todoReducer = (state = initialState, action) => {
             return {
                 ...state,
                 tasks: updatedTasks
+            }
+        case 'USER_INPUT':
+            const updatedUserInput = action.payload
+            return {
+                ...state,
+                userInput: updatedUserInput
             }
         default:
             return state

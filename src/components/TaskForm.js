@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import "./TaskForm.css";
 import { useSelector, useDispatch } from "react-redux";
-import { remove, add } from "../actions";
+import { remove, add, userInput } from "../actions";
 
 export default function TaskForm() {
   const tasks = useSelector((state) => state.tasks);
+  const currentInput = useSelector((state) => state.userInput);
   const dispatch = useDispatch();
 
-  const [inputValue, setInputValue] = useState("");
+  //const [inputValue, setInputValue] = useState("");
 
   return (
     <div className="TaskForm">
@@ -17,10 +18,10 @@ export default function TaskForm() {
       <div>
         <input
           type="text"
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
+          value={currentInput}
+          onChange={(e) => dispatch(userInput(e.target.value))}
         />
-        <button onClick={() => dispatch(add(inputValue))}>Add</button>
+        <button onClick={() => dispatch(add(currentInput))}>Add</button>
       </div>
       {/* Render the list of todo items */}
       <ul>

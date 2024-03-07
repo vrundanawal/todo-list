@@ -11,3 +11,10 @@ export const remove = (id) => {
         payload: id
     }
 }
+
+export const userInput = (text) => {
+    return {
+        type: 'USER_INPUT',
+        payload: text
+    }
+}
