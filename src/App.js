@@ -7,13 +7,13 @@ import TodoList from "./components/TodoList";
 function App() {
   return (
     <div className="app">
-      <TodoProvider>
-        <div className="task">
+      <div className="task">
+        <TodoProvider>
           <h1>Todo List</h1>
           <AddTodo />
           <TodoList />
-        </div>
-      </TodoProvider>
+        </TodoProvider>
+      </div>
     </div>
   );
 }

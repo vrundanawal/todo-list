@@ -6,7 +6,7 @@ const TodoProvider = ({ children }) => {
   const [todos, setTodos] = useState([]);
 
   const createTodo = (inputText) => {
-    setTodos([...todos, { id: new Date().getTime(), inputText }]);
+    setTodos([...todos, { id: todos.length+1, inputText }]);
   };
 
   const deleteTodo = (id) => {
