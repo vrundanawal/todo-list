@@ -9,25 +9,11 @@ const TodoProvider = ({ children }) => {
     setTodos([...todos, { id: new Date().getTime(), inputText }]);
   };
 
-  // const readTodo = (id) => {
-  //   return todos.find((todo) => todo.id === id);
-  // };
-
-  const updateTodo = (id, newInputText) => {
-    setTodos(
-      todos.map((todo) => {
-        return todo.id === id ? { ...todo, inputText: newInputText } : todo;
-      })
-    );
-  };
-
   const deleteTodo = (id) => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
   return (
-    <TodoContext.Provider
-      value={{ todos, createTodo, deleteTodo ,updateTodo }}
-    >
+    <TodoContext.Provider value={{ todos, createTodo, deleteTodo }}>
       {children}
     </TodoContext.Provider>
   );
